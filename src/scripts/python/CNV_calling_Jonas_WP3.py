@@ -27,13 +27,17 @@ bad_samples = ["D20-01807", "D20-05905", "D20-00636", "D20-02964", "47202"]
 bad_runs = ["TE6","TE8","TE9","TE10","TE11","TE12","TE13","TE14","TE15","TE19","TE999"]
 
 
-def Get_sample_and_run_names(sample_infile) :
+def Get_sample_and_run_names(sample_infile, sample_type) :
     sample_dict = {}
     i = 0
     for line in sample_infile :
         sample = line.strip().split("/")[-1].split("-ready")[0]
-        run = line.strip().split("/")[-5].split("_")[0]
-        complete_run = line.strip().split("/")[-5]
+        if sample_type == "normal" :
+            run = line.strip().split("/")[-3].split("_")[0]
+            complete_run = line.strip().split("/")[-3]
+        else :
+            run = line.strip().split("/")[-5].split("_")[0]
+            complete_run = line.strip().split("/")[-5]
         sample_dict[i] = [run, sample, complete_run]
         i += 1
     return sample_dict
@@ -595,10 +599,10 @@ def Plot_CNV_figure(sample_included_list, sample_exon_coverage, exon_median, exo
 
 """Start of main script"""
 #Get normals and run names
-normal_sample_dict = Get_sample_and_run_names(infile_normal_samples)
+normal_sample_dict = Get_sample_and_run_names(infile_normal_samples, "normal")
 
 #Get samples and run names
-sample_dict = Get_sample_and_run_names(infile_samples)
+sample_dict = Get_sample_and_run_names(infile_samples, "sample")
 
 #Read Normal CNV file for annotation
 Normal_cnv1_dict = Get_normal_cnv1()
