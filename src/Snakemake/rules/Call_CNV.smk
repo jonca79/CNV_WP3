@@ -13,7 +13,7 @@ rule Call_CNV:
     #singularity:
     #    "/projects/wp2/nobackup/Twist_Myeloid/Containers/python3.6.0-pysam-xlsxwriter.simg"
     shell:
-        "mkdir CNV/CNV_plots/ && "
+        "mkdir -p CNV/CNV_plots/ && "
         "source /projects/wp4/nobackup/workspace/jonas_test/CNV_WP3/Twist_exome_WP3_venv/bin/activate && "
         "python3 src/scripts/python/CNV_calling_Jonas_WP3.py "
         "{input.samples} {input.cov} {input.normal_samples} {input.normal_cov} {input.normal_cnv1} "
