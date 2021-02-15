@@ -5,7 +5,7 @@ rule Call_CNV:
         cov="CNV/Run.cov",
         normal_samples="DATA/samples_TE6_37.txt",
         normal_cov="DATA/TE6_37_all_panels.cov",
-        normal_cnv1="WW_25m_CNV_ChAS3.0.aed",
+        normal_cnv1="DATA/WW_25m_CNV_ChAS3.0.aed",
     output:
         cnv="CNV/calls.tsv",
     params:
