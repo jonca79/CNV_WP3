@@ -12,9 +12,9 @@ outplotsdir = sys.argv[4]
 #infile_normal_samples = open("/home/jonas/Investigations/CNV_WP3/samples_TE6_37.txt")
 #infile_normal_coverage = open("/home/jonas/Investigations/CNV_WP3/TE6_37_all_panels.cov")
 #infile_normal_cnv1 = open("/home/jonas/Investigations/CNV_WP3/Known_CNV_data/WW_25m_CNV_ChAS3.0.aed")
-infile_normal_samples = open("/projects/wp3/nobackup/TWIST/OUTBOX/TE41_210122/Jonas_CNV/samples_TE6_37.txt")
-infile_normal_coverage = open("/projects/wp3/nobackup/TWIST/OUTBOX/TE41_210122/Jonas_CNV/TE6_37_all_panels.cov")
-infile_normal_cnv1 = open("/projects/wp3/nobackup/TWIST/OUTBOX/TE41_210122/Jonas_CNV/WW_25m_CNV_ChAS3.0.aed")
+#infile_normal_samples = open("/projects/wp3/nobackup/TWIST/OUTBOX/TE41_210122/Jonas_CNV/samples_TE6_37.txt")
+#infile_normal_coverage = open("/projects/wp3/nobackup/TWIST/OUTBOX/TE41_210122/Jonas_CNV/TE6_37_all_panels.cov")
+#infile_normal_cnv1 = open("/projects/wp3/nobackup/TWIST/OUTBOX/TE41_210122/Jonas_CNV/WW_25m_CNV_ChAS3.0.aed")
 #outfile_cnv = open("/home/jonas/Investigations/CNV_WP3/TE6_37_all_panels_cnv.csv", "w")
 
 outfile_cnv.write("CNV_type\trun\tsample\tchrom\tstart\tend\texons\tnr_of_exons\tcoverage\tgene_corrected_coverage\tmedian_coverage\tnr_std\tgene_corrected_nr_std\tCN\tgene_corrected_CN\tgene_median\tgene_stdev\tgene_coverage\tstd_from_gene_median\tQC_total_std\thet_variants\tCNV_in_Normals\n")
