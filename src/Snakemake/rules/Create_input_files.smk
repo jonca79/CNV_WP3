@@ -8,11 +8,11 @@ rule Make_coverage_bed:
     singularity:
         "/projects/wp4/nobackup/workspace/somatic_dev/singularity/bedtools2.29.2_samtools1.9.0_fgbio1.3.0.simg"
     shell:
-        "bedtools multicov -bams BAM/*.bam -bed {input.bed} > {output.cov}"
+        "bedtools multicov -bams ../BAM/*.bam -bed {input.bed} > {output.cov}"
 
 
 rule Make_sample_file:
     output:
         samples="CNV/samples.txt",
     shell:
-        "ls -d $PWD/BAM/*.bam > {output.samples}"
+        "ls -d ../BAM/*.bam > {output.samples}"
