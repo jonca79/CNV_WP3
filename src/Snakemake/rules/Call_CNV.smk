@@ -10,4 +10,4 @@ rule Call_CNV:
     singularity:
         "/projects/wp2/nobackup/Twist_Myeloid/Containers/python3.6.0-pysam-xlsxwriter.simg"
     shell:
-        "src/scripts/python/CNV_calling_Jonas_WP3.py {input.samples} {input.cov} {output.cnv} {params.plotsdir}"
+        "python src/scripts/python/CNV_calling_Jonas_WP3.py {input.samples} {input.cov} {output.cnv} {params.plotsdir}"
