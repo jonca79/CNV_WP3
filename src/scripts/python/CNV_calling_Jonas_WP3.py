@@ -6,8 +6,11 @@ import matplotlib.pyplot as plt
 
 infile_samples = open(sys.argv[1])
 infile_coverage = open(sys.argv[2])
-outfile_cnv = open(sys.argv[3], "w")
-outplotsdir = sys.argv[4]
+infile_normal_samples = open(sys.argv[3])
+infile_normal_coverage = open(sys.argv[4])
+infile_normal_cnv1 = open(sys.argv[5])
+outfile_cnv = open(sys.argv[6], "w")
+outplotsdir = sys.argv[7]
 
 #infile_normal_samples = open("/home/jonas/Investigations/CNV_WP3/samples_TE6_37.txt")
 #infile_normal_coverage = open("/home/jonas/Investigations/CNV_WP3/TE6_37_all_panels.cov")
