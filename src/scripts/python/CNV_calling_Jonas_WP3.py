@@ -1,8 +1,8 @@
 
 import statistics
 import sys
-#import matplotlib
-#import matplotlib.pyplot as plt
+import matplotlib
+import matplotlib.pyplot as plt
 
 infile_samples = open(sys.argv[1])
 infile_coverage = open(sys.argv[2])
@@ -707,4 +707,4 @@ for single_call in Single_exon_calls :
         outfile_cnv.write("\n")
 
 #Plot CNV figures
-#Plot_CNV_figure(sample_included_list, exon_coverage, normal_exon_median, normal_exon_stdev, Single_exon_calls, Multi_exon_calls)
+Plot_CNV_figure(sample_included_list, exon_coverage, normal_exon_median, normal_exon_stdev, Single_exon_calls, Multi_exon_calls)

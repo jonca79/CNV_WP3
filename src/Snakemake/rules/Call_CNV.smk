@@ -10,9 +10,10 @@ rule Call_CNV:
         cnv="CNV/calls.tsv",
     params:
         plotsdir="CNV/CNV_plots/",
-    singularity:
-        "/projects/wp2/nobackup/Twist_Myeloid/Containers/python3.6.0-pysam-xlsxwriter.simg"
+    #singularity:
+    #    "/projects/wp2/nobackup/Twist_Myeloid/Containers/python3.6.0-pysam-xlsxwriter.simg"
     shell:
+        "source /projects/wp4/nobackup/workspace/jonas_test/CNV_WP3/Twist_exome_WP3_venv/bin/activate && "
         "python3 src/scripts/python/CNV_calling_Jonas_WP3.py "
         "{input.samples} {input.cov} {input.normal_samples} {input.normal_cov} {input.normal_cnv1} "
         "{output.cnv} {params.plotsdir}"
