@@ -32,8 +32,8 @@ def Get_sample_and_run_names(sample_infile) :
     i = 0
     for line in sample_infile :
         sample = line.strip().split("/")[-1].split("-ready")[0]
-        run = line.strip().split("/")[-3].split("_")[0]
-        complete_run = line.strip().split("/")[-3]
+        run = line.strip().split("/")[-4].split("_")[0]
+        complete_run = line.strip().split("/")[-4]
         sample_dict[i] = [run, sample, complete_run]
         i += 1
     return sample_dict
