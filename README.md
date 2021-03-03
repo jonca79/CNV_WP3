@@ -2,7 +2,7 @@
 
 #Instructions on how to run the pipeline <br>
 cd /projects/wp3/nobackup/TWIST/OUTBOX/TEXX_XXX/ <br>
-git clone https://github.com/jonca79/CNV_WP3.git <br>
+git clone https://github.com/jonca79/CNV_WP3.git .<br>
 cd CNV_WP3 <br>
 module add snakemake <br>
 module add slurm-drmaa <br>
