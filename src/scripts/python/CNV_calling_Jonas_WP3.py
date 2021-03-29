@@ -420,7 +420,7 @@ def Call_multi_exon_CNV(CNV_type, exon_candidates2, normal_exon_coverage, sample
                                 CNV_Normal = CNV_in_Normal(sample_exon_coverage[exon_region[1]][0][0],  sample_exon_coverage[exon_region[1]][0][1],  sample_exon_coverage[exon_region[1]][0][2], Normal_cnv1_dict)
                                 outfile_cnv.write("Deletion\t" + sample_included_list[sample][0] + "\t" + sample_included_list[sample][1] + "\t" + sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[2]][0][2] + "\t" + sample_exon_coverage[exon_region[1]][0][3] + " - " + sample_exon_coverage[exon_region[2]][0][3] + "\t" + str(nr_exons) + "\t" + str(exon_region[0]) + "\t" + str(gene_corrected_exon_region_coverage) + "\t" + str(exon_region_median) + "\t" + str(std_diff) + "\t" + str(gene_corrected_std_diff) + "\t" + str(cn) + "\t" + str(gene_corrected_cn) + "\t" + str(gene_median[gene]) + "\t" + str(gene_stdev[gene]) + "\t" + str(sample_gene_coverage[gene][sample]) + "\t" + str(Std_from_gene_median) + "\t" + str(Sample_QC[sample][0]) + "\t" + variants_in_region + "\t" + CNV_Normal + "\n")
                                 results.append([sample_exon_coverage[exon_region[1]][0][0], sample_exon_coverage[exon_region[1]][0][1], sample_exon_coverage[exon_region[2]][0][2], cn, gene_corrected_std_diff, sample_included_list[sample][1]])
-                                outfile_sample_cnv = open(sample_included_list[sample][1] + "_calls.aed", "a")
+                                outfile_sample_cnv = open("CNV/" + sample_included_list[sample][1] + "_calls.aed", "a")
                                 outfile_sample_cnv.write(sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[1]][0][2] + "\t" + str(gene_corrected_cn) + "\trgb(166,0,0)" + "\n")
                                 outfile_sample_cnv.close()
                         elif CNV_type == "Duplication" :
@@ -432,7 +432,7 @@ def Call_multi_exon_CNV(CNV_type, exon_candidates2, normal_exon_coverage, sample
                                 CNV_Normal = CNV_in_Normal(sample_exon_coverage[exon_region[1]][0][0],  sample_exon_coverage[exon_region[1]][0][1],  sample_exon_coverage[exon_region[1]][0][2], Normal_cnv1_dict)
                                 outfile_cnv.write("Duplication\t" + sample_included_list[sample][0] + "\t" + sample_included_list[sample][1] + "\t" + sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[2]][0][2] + "\t" + sample_exon_coverage[exon_region[1]][0][3] + " - " + sample_exon_coverage[exon_region[2]][0][3] + "\t" + str(nr_exons) + "\t" + str(exon_region[0]) + "\t" + str(gene_corrected_exon_region_coverage) + "\t" + str(exon_region_median) + "\t" + str(std_diff) + "\t" + str(gene_corrected_std_diff) + "\t" + str(cn) + "\t" + str(gene_corrected_cn) + "\t" + str(gene_median[gene]) + "\t" + str(gene_stdev[gene]) + "\t" + str(sample_gene_coverage[gene][sample]) + "\t" + str(Std_from_gene_median) + "\t" + str(Sample_QC[sample][0]) + "\t" + variants_in_region + "\t" + CNV_Normal + "\n")
                                 results.append([sample_exon_coverage[exon_region[1]][0][0], sample_exon_coverage[exon_region[1]][0][1], sample_exon_coverage[exon_region[2]][0][2], cn, gene_corrected_std_diff, sample_included_list[sample][1]])
-                                outfile_sample_cnv = open(sample_included_list[sample][1] + "_calls.aed", "a")
+                                outfile_sample_cnv = open("CNV/" + sample_included_list[sample][1] + "_calls.aed", "a")
                                 outfile_sample_cnv.write(sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[1]][0][2] + "\t" + str(gene_corrected_cn) + "\trgb(0,0,166)" + "\n")
                                 outfile_sample_cnv.close()
                     else :
@@ -445,7 +445,7 @@ def Call_multi_exon_CNV(CNV_type, exon_candidates2, normal_exon_coverage, sample
                                 CNV_Normal = CNV_in_Normal(sample_exon_coverage[exon_region[1]][0][0],  sample_exon_coverage[exon_region[1]][0][1],  sample_exon_coverage[exon_region[1]][0][2], Normal_cnv1_dict)
                                 outfile_cnv.write("Deletion\t" + sample_included_list[sample][0] + "\t" + sample_included_list[sample][1] + "\t" + sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[2]][0][2] + "\t" + sample_exon_coverage[exon_region[1]][0][3] + " - " + sample_exon_coverage[exon_region[2]][0][3] + "\t" + str(nr_exons) + "\t" + str(exon_region[0]) + "\t" + str(gene_corrected_exon_region_coverage) + "\t" + str(exon_region_median) + "\t" + str(std_diff) + "\t" + str(gene_corrected_std_diff)+ "\t" + str(cn) + "\t" + str(gene_corrected_cn) + "\t" + str(gene_median[gene]) + "\t" + str(gene_stdev[gene]) + "\t" + str(sample_gene_coverage[gene][sample]) + "\t" + str(Std_from_gene_median) + "\t" + str(Sample_QC[sample][0]) + "\t" + variants_in_region + "\t" + CNV_Normal + "\n")
                                 results.append([sample_exon_coverage[exon_region[1]][0][0], sample_exon_coverage[exon_region[1]][0][1], sample_exon_coverage[exon_region[2]][0][2], cn, gene_corrected_std_diff, sample_included_list[sample][1]])
-                                outfile_sample_cnv = open(sample_included_list[sample][1] + "_calls.aed", "a")
+                                outfile_sample_cnv = open("CNV/" + sample_included_list[sample][1] + "_calls.aed", "a")
                                 outfile_sample_cnv.write(sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[1]][0][2] + "\t" + str(cn) + "\trgb(166,0,0)" + "\n")
                                 outfile_sample_cnv.close()
                         elif CNV_type == "Duplication" :
@@ -457,7 +457,7 @@ def Call_multi_exon_CNV(CNV_type, exon_candidates2, normal_exon_coverage, sample
                                 CNV_Normal = CNV_in_Normal(sample_exon_coverage[exon_region[1]][0][0],  sample_exon_coverage[exon_region[1]][0][1],  sample_exon_coverage[exon_region[1]][0][2], Normal_cnv1_dict)
                                 outfile_cnv.write("Duplication\t" + sample_included_list[sample][0] + "\t" + sample_included_list[sample][1] + "\t" + sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[2]][0][2] + "\t" + sample_exon_coverage[exon_region[1]][0][3] + " - " + sample_exon_coverage[exon_region[2]][0][3] + "\t" + str(nr_exons) + "\t" + str(exon_region[0]) + "\t" + str(gene_corrected_exon_region_coverage) + "\t" + str(exon_region_median) + "\t" + str(std_diff) + "\t" + str(gene_corrected_std_diff) + "\t" + str(cn) + "\t" + str(gene_corrected_cn) + "\t" + str(gene_median[gene]) + "\t" + str(gene_stdev[gene]) + "\t" + str(sample_gene_coverage[gene][sample]) + "\t" + str(Std_from_gene_median) + "\t" + str(Sample_QC[sample][0]) + "\t" + variants_in_region + "\t" + CNV_Normal + "\n")
                                 results.append([sample_exon_coverage[exon_region[1]][0][0], sample_exon_coverage[exon_region[1]][0][1], sample_exon_coverage[exon_region[2]][0][2], cn, gene_corrected_std_diff, sample_included_list[sample][1]])
-                                outfile_sample_cnv = open(sample_included_list[sample][1] + "_calls.aed", "a")
+                                outfile_sample_cnv = open("CNV/" + sample_included_list[sample][1] + "_calls.aed", "a")
                                 outfile_sample_cnv.write(sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[1]][0][2] + "\t" + str(cn) + "\trgb(0,0,166)" + "\n")
                                 outfile_sample_cnv.close()
                 elif CNV_size_type == "large" :
@@ -470,7 +470,7 @@ def Call_multi_exon_CNV(CNV_type, exon_candidates2, normal_exon_coverage, sample
                             CNV_Normal = CNV_in_Normal(sample_exon_coverage[exon_region[1]][0][0],  sample_exon_coverage[exon_region[1]][0][1],  sample_exon_coverage[exon_region[1]][0][2], Normal_cnv1_dict)
                             outfile_cnv.write("Deletion\t" + sample_included_list[sample][0] + "\t" + sample_included_list[sample][1] + "\t" + sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[2]][0][2] + "\t" + sample_exon_coverage[exon_region[1]][0][3] + " - " + sample_exon_coverage[exon_region[2]][0][3] + "\t" + str(nr_exons) + "\t" + str(exon_region[0]) + "\t\t" + str(exon_region_median) + "\t" + str(std_diff) + "\t\t" + str(cn) + "\t\t\t\t\t\t" + str(Sample_QC[sample][0]) + "\t" + variants_in_region + "\t" + CNV_Normal + "\n")
                             results.append([sample_exon_coverage[exon_region[1]][0][0], sample_exon_coverage[exon_region[1]][0][1], sample_exon_coverage[exon_region[2]][0][2], cn, std_diff, sample_included_list[sample][1]])
-                            outfile_sample_cnv = open(sample_included_list[sample][1] + "_calls.aed", "a")
+                            outfile_sample_cnv = open("CNV/" + sample_included_list[sample][1] + "_calls.aed", "a")
                             outfile_sample_cnv.write(sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[1]][0][2] + "\t" + str(cn) + "\trgb(166,0,0)" + "\n")
                             outfile_sample_cnv.close()
                     elif CNV_type == "Duplication" :
@@ -482,7 +482,7 @@ def Call_multi_exon_CNV(CNV_type, exon_candidates2, normal_exon_coverage, sample
                             CNV_Normal = CNV_in_Normal(sample_exon_coverage[exon_region[1]][0][0],  sample_exon_coverage[exon_region[1]][0][1],  sample_exon_coverage[exon_region[1]][0][2], Normal_cnv1_dict)
                             outfile_cnv.write("Duplication\t" + sample_included_list[sample][0] + "\t" + sample_included_list[sample][1] + "\t" + sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[2]][0][2] + "\t" + sample_exon_coverage[exon_region[1]][0][3] + " - " + sample_exon_coverage[exon_region[2]][0][3] + "\t" + str(nr_exons) + "\t" + str(exon_region[0]) + "\t\t" + str(exon_region_median) + "\t" + str(std_diff) + "\t\t" + str(cn) + "\t\t\t\t\t\t" + str(Sample_QC[sample][0]) + "\t" + variants_in_region + "\t" + CNV_Normal + "\n")
                             results.append([sample_exon_coverage[exon_region[1]][0][0], sample_exon_coverage[exon_region[1]][0][1], sample_exon_coverage[exon_region[2]][0][2], cn, std_diff, sample_included_list[sample][1]])
-                            outfile_sample_cnv = open(sample_included_list[sample][1] + "_calls.aed", "a")
+                            outfile_sample_cnv = open("CNV/" + sample_included_list[sample][1] + "_calls.aed", "a")
                             outfile_sample_cnv.write(sample_exon_coverage[exon_region[1]][0][0] + "\t" + sample_exon_coverage[exon_region[1]][0][1] + "\t" + sample_exon_coverage[exon_region[1]][0][2] + "\t" + str(cn) + "\trgb(0,0,166)" + "\n")
                             outfile_sample_cnv.close()
     return results
@@ -684,7 +684,7 @@ Sample_QC = Calculate_sample_QC(exon_coverage, normal_exon_median, normal_exon_s
 #Create .aed output files with header
 for sample_i in sample_dict :
     sample = sample_dict[sample_i][1]
-    outfile_sample_cnv = open(sample + "_calls.aed", "w")
+    outfile_sample_cnv = open("CNV/" + sample + "_calls.aed", "w")
     outfile_sample_cnv.write("bio:sequence(aed:String)\tbio:start(aed:Integer)\tbio:end(aed:Integer)\taed:name(aed:String)\taed:value(aed:String)\tstyle:color(aed:Color)\n")
     outfile_sample_cnv.close()
 
@@ -737,7 +737,7 @@ for single_call in Single_exon_calls :
             outfile_cnv.write("\t" + str(output))
         outfile_cnv.write("\n")
         sample = single_call[2]
-        outfile_sample_cnv = open(sample + "_calls.aed", "a")
+        outfile_sample_cnv = open("CNV/" + sample + "_calls.aed", "a")
         if single_call[12] > 2:
             #Blue
             outfile_sample_cnv.write(str(single_call[3]) + "\t" + str(single_call[4]) + "\t" + str(single_call[5]) + "\t" + str(single_call[12]) + "\trgb(0,0,166)" + "\n")
