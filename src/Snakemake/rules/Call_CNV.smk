@@ -10,7 +10,7 @@ rule Call_CNV:
         cnv="CNV/calls.tsv",
     params:
         plotsdir="CNV/CNV_plots/",
-    #singularity:
+    # singularity:
     #    "/projects/wp2/nobackup/Twist_Myeloid/Containers/python3.6.0-pysam-xlsxwriter.simg"
     shell:
         "mkdir -p CNV/CNV_plots/ && "
