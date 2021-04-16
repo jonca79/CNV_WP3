@@ -407,12 +407,12 @@ def Call_multi_exon_CNV(CNV_type, exon_candidates2, normal_exon_coverage, sample
                         j += 1
                     i = 1
                     start_exon += 1
+                exon_region_median = statistics.median(exon_region_coverage)
+                exon_region_std = statistics.stdev(exon_region_coverage)
                 if exon_region_std == 0:
                     exon_region_std = 1000
                 if exon_region_median == 0:
                     exon_region_median = 1
-                exon_region_median = statistics.median(exon_region_coverage)
-                exon_region_std = statistics.stdev(exon_region_coverage)
                 std_diff = (exon_region[0] - exon_region_median) / exon_region_std
                 cn = exon_region[0] / exon_region_median * 2
                 nr_exons = exon_region[2] - exon_region[1] + 1
