@@ -407,12 +407,14 @@ def Call_multi_exon_CNV(CNV_type, exon_candidates2, normal_exon_coverage, sample
                     start_exon += 1
                 exon_region_median = statistics.median(exon_region_coverage)
                 exon_region_std = statistics.stdev(exon_region_coverage)
-                if exon_region_std == 0 or exon_region_median == 0 or sample_gene_coverage[gene][sample] == 0 :
+                if exon_region_std == 0 or exon_region_median == 0 :
                     continue
                 std_diff = (exon_region[0] - exon_region_median) / exon_region_std
                 cn = exon_region[0] / exon_region_median * 2
                 nr_exons = exon_region[2] - exon_region[1] + 1
                 if CNV_size_type == "gene" :
+                    if sample_gene_coverage[gene][sample] == 0:
+                        continue
                     Std_from_gene_median = (sample_gene_coverage[gene][sample] - gene_median[gene]) / gene_stdev[gene]
                     if exon_region[0] / sample_gene_coverage[gene][sample] > 0.75 :
                         gene_corrected_exon_region_coverage = exon_region[0]
