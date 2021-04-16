@@ -226,12 +226,8 @@ def Call_single_exon_CNV(sample_exon_coverage, exon_median, exon_stdev, sample_g
         gene = exon[0][3].split("_")[0]
         i = 0
         for coverage in exon[1] :
-            if exon_stdev[j] == 0:
-                exon_stdev[j] = 1000
-            if exon_median[j] == 0:
-                exon_median[j] = 1
-            if sample_gene_coverage[gene][i] == 0:
-                sample_gene_coverage[gene][i] = 1
+            if exon_stdev[j] == 0 or exon_median[j] == 0 or sample_gene_coverage[gene][i] :
+                continue
             Std_from_gene_median = (sample_gene_coverage[gene][i] - gene_median[gene]) / gene_stdev[gene]
             Std_from_exon_median = (coverage - exon_median[j]) / exon_stdev[j]
             cn = coverage / exon_median[j] * 2
@@ -267,7 +263,9 @@ def Get_non_median_exons(sample_exon_coverage, exon_candidates_del, exon_candida
         gene = exon[0][3].split("_")[0]
         i = 0
         for coverage in exon[1] :
-            Std_from_exon_median = (coverage - exon_median[j]) / exon_stdev[j]
+            Std_from_exon_median = 0
+            if exon_stdev[j] > 0 :
+                Std_from_exon_median = (coverage - exon_median[j]) / exon_stdev[j]
             if Std_from_exon_median < -1 * std :
                 if gene not in exon_candidates_del :
                     exon_candidates_del[gene] = {}
@@ -409,10 +407,8 @@ def Call_multi_exon_CNV(CNV_type, exon_candidates2, normal_exon_coverage, sample
                     start_exon += 1
                 exon_region_median = statistics.median(exon_region_coverage)
                 exon_region_std = statistics.stdev(exon_region_coverage)
-                if exon_region_std == 0:
-                    exon_region_std = 1000
-                if exon_region_median == 0:
-                    exon_region_median = 1
+                if exon_region_std == 0 or exon_region_median == 0 or sample_gene_coverage[gene][sample] == 0 :
+                    continue
                 std_diff = (exon_region[0] - exon_region_median) / exon_region_std
                 cn = exon_region[0] / exon_region_median * 2
                 nr_exons = exon_region[2] - exon_region[1] + 1
