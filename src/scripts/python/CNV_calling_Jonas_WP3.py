@@ -226,7 +226,7 @@ def Call_single_exon_CNV(sample_exon_coverage, exon_median, exon_stdev, sample_g
         gene = exon[0][3].split("_")[0]
         i = 0
         for coverage in exon[1] :
-            if exon_stdev[j] == 0 or exon_median[j] == 0 or sample_gene_coverage[gene][i] :
+            if exon_stdev[j] == 0 or exon_median[j] == 0 or sample_gene_coverage[gene][i] == 0 :
                 continue
             Std_from_gene_median = (sample_gene_coverage[gene][i] - gene_median[gene]) / gene_stdev[gene]
             Std_from_exon_median = (coverage - exon_median[j]) / exon_stdev[j]
