@@ -2,8 +2,8 @@
 
 rule Make_coverage_bed:
     input:
-        bed="DATA/All_panels.bed",
-        #bed="DATA/Twist_Exome_Target_hg19.annotated.bed",
+        #bed="DATA/All_panels.bed",
+        bed="DATA/Twist_Exome_Target_hg19.annotated.bed",
     output:
         cov="CNV/Run.cov",
     singularity:

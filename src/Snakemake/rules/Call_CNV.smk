@@ -3,10 +3,10 @@ rule Call_CNV:
     input:
         samples="CNV/samples.txt",
         cov="CNV/Run.cov",
-        normal_samples="DATA/samples_TE6_37.txt",
-        #normal_samples="DATA/samples_TE16_37.txt",
-        normal_cov="DATA/TE6_37_all_panels.cov",
-        #normal_cov="DATA/TE16_37_exome.cov",
+        #normal_samples="DATA/samples_TE6_37.txt",
+        normal_samples="DATA/samples_TE16_37.txt",
+        #normal_cov="DATA/TE6_37_all_panels.cov",
+        normal_cov="DATA/TE16_37_exome.cov",
         normal_cnv1="DATA/WW_25m_CNV_ChAS3.0.aed",
     output:
         cnv="CNV/calls.tsv",
