@@ -539,6 +539,8 @@ def Plot_CNV_figure(sample_included_list, sample_exon_coverage, exon_median, exo
         j = 0
         plot_data = []
         for exon in sample_exon_coverage :
+            if exon_stdev[j] == 0 or exon_median[j] == 0 :
+                continue
             coverage = exon[1][sample_nr]
             Std_from_exon_median = (coverage - exon_median[j]) / exon_stdev[j]
             cn = coverage / exon_median[j] * 2
