@@ -8,5 +8,5 @@
         "error": "logs/cluster/{rule}.{wildcards}.err",
         "n": 1
     },
-    "Make_coverage_bed": {"n" : 20, "time" : "4:00:00"},
+    "Make_coverage_bed": {"n" : 4, "time" : "4:00:00"},
 }
